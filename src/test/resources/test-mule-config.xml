@@ -1,0 +1,15 @@
+<mule xmlns="http://www.mulesoft.org/schema/mule/core"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:securetransport-end-user="http://www.mulesoft.org/schema/mule/securetransport-end-user"
+      xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+          http://www.mulesoft.org/schema/mule/securetransport-end-user http://www.mulesoft.org/schema/mule/securetransport-end-user/current/mule-securetransport-end-user.xsd">
+
+    <securetransport-end-user:config name="SecureTransport_End_User_Config" >
+        <securetransport-end-user:connection serverUrl="https://anypoint.mulesoft.com/mocking/api/v1/sources/exchange/assets/47136d0d-810c-4635-a9be-3ed4c677024d/securetransportmock/1.0.0/m/" />
+    </securetransport-end-user:config>
+
+    <flow name="getAddressBookEntryFlow">
+        <securetransport-end-user:address-book operation="Get_Address_Book_Entries" config-ref="SecureTransport_End_User_Config"/>
+    </flow>
+
+</mule>
